@@ -5,23 +5,32 @@ function Ticket(showtimes, adults, kids, cardHolder) {
   this.adults = parseInt(adults);
   this.kids = parseInt(kids);
   this.cardHolder = cardHolder;
-  this.childPrices;
-  this.adultPrices;
+  this.childPrices = this.childPrices();
+  this.adultPrices = this.adultPrices();
 }
-Ticket.prototype.prices = function() {
+Ticket.prototype.adultPrices = function(newTicket) {
   if (this.showtimes === 3) {
     adultPrices = this.adults * 7;
-    childPrices = this.kids * 3;
   }
-  else {
+else {
     adultPrices = this.adults * 10;
+  }
+  return adultPrices;
+}
+Ticket.prototype.childPrices = function(newTicket) {
+  if (this.showtimes === 3) {
     childPrices = this.kids * 5;
   }
+else {
+    childPrices = this.kids * 7;
+  }
+  return childPrices;
 }
+
 
 Ticket.prototype.receipt = function() {
   console.log(this);
-  return this.cardHolder + " you have purchased " + this.adults + " adult tickets for " + this.adultPrices + " and " + this.kids + " kids tickets for " + this.childPrices + " for the " + this.showtimes + " 0'clock showing";
+  return this.cardHolder + " you have purchased " + this.adults + " adult tickets for $" + this.adultPrices + " and " + this.kids + " kids tickets for $" + this.childPrices + " for the " + this.showtimes + " 0'clock showing your total is $" + parseInt(childPrices + adultPrices);
 }
 
 // user interface logic
