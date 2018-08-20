@@ -19,31 +19,46 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script src="js/scripts.js"></script>
 
-
-    <title>Movie tickets</title>
-  </head>
+  <title>Movie tickets</title>
+</head>
   <body>
     <div class="container">
       <h1>Movie Tickets</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>What time would you like</h2>
+          <form id="ticketSales">
+            <label><input type="radio" name="movieTime" value="12"> Noon</label><br>
+            <label><input type="radio" name="movieTime" value="3"> 3:00 discounted showing</label><br>
+            <label><input type="radio" name="movieTime" value="6"> 6pm</label><br>
+            <label><input type="radio" name="movieTime" value="9"> 9pm</label><br>
 
-    <h2>What time would you like</h2>
-    <form id="ticketSales">
-      <label><input type="radio" name="movieTime" value="12"> Noon</label><br>
-      <label><input type="radio" name="movieTime" value="3"> 3:00 discounted showing</label><br>
-      <label><input type="radio" name="movieTime" value="6"> 6pm</label><br>
-      <label><input type="radio" name="movieTime" value="9"> 9pm</label><br>
+            <h2> How many adults? </h2>
+            <label for="adults"> <input type="number" min="0" name="adults"> </label>
+            <h2> How many kids under 12 </h2>
+            <label for="kids"> <input type="number" min="0" name="kids"> </label>
 
-    <h2> How many adults? </h2>
-    <label for="adults"> <input type="number" min="0" name="adults"> </label>
-    <h2> How many kids under 12 </h2>
-    <label for="kids"> <input type="number" min="0" name="kids"> </label>
-
-    <h2> Cardholders name </h2>
-    <label for="cardName"> <input type="text"  id="cardName"><br> </label>
-    <button type="submit" id="submitButton">Place Order</button>
-    </form>
-        <div class="ticketOutput">
+              <h2> Cardholders name </h2>
+            <label for="cardName"> <input type="text"  id="cardName"><br> </label>
+            <button type="submit" id="submitButton">Place Order</button>
+          </form>
+        </div>
+        <div>
+          <ul class="purchaser">
+            <h2>Purchaser</h2>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="purchaseHistory ticketOutput">
+            <h2>Purchase History</h2>
+            <p>Name: <span id="purchase-Name"></span></p>
+            <p>Adults: <span id="purchase-Adults"></span></p>
+            <p>Kids: <span id="purchase-Kids"></span></p>
+            <p>Showtime: <span id="purchase-Time"></span>:00 pm</p>
+            <p>Total Price: $<span id="purchase-Price"></span></p>
+          </div>
         </div>
       </div>
-    </body>
+    </div>
+  </body>
 </html>

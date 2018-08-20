@@ -1,6 +1,8 @@
 //business logic
+// function purchaseHistory(Ticket) {
+// history = [];
+// }
 function Ticket(showtimes, adults, kids, cardHolder) {
-
   this.showtimes = parseInt(showtimes);
   this.adults = parseInt(adults);
   this.kids = parseInt(kids);
@@ -11,8 +13,7 @@ function Ticket(showtimes, adults, kids, cardHolder) {
 Ticket.prototype.adultPrices = function(newTicket) {
   if (this.showtimes === 3) {
     adultPrices = this.adults * 7;
-  }
-else {
+  } else {
     adultPrices = this.adults * 10;
   }
   return adultPrices;
@@ -29,7 +30,7 @@ else {
 
 
 Ticket.prototype.receipt = function() {
-  console.log(this);
+
   return this.cardHolder + " you have purchased " + this.adults + " adult tickets for $" + this.adultPrices + " and " + this.kids + " kids tickets for $" + this.childPrices + " for the " + this.showtimes + " 0'clock showing your total is $" + parseInt(childPrices + adultPrices);
 }
 
@@ -39,19 +40,25 @@ $(document).ready(function() {
     event.preventDefault();
 
     var showtimes = $("input[name=movieTime]:checked").val();
-    console.log(showtimes + " this is showtime")
     var adults = $("input[name=adults]").val();
-    console.log(adults);
     var kids = $("input[name=kids]").val();
-    console.log(kids);
     var cardHolder = $("#cardName").val();
-    console.log(cardHolder);
     var newTicket = new Ticket(showtimes, adults, kids, cardHolder);
-    // newTicket += newTicket.prices();
-    // console.log(newTicket);
-    $(".ticketOutput").append(newTicket.receipt());
-    console.log(newTicket);
+    console.log(cardHolder);
 
-      });
+    $("ul.purchaser").append("<li>" + cardHolder + "</li>");
+
+    $("ul.purchaser").click(function() {
+      $(".purchaseHistory").toggle();
+    })
+
+
+    $("#purchase-Name").text(cardHolder);
+    $("#purchase-Adults").text(adults);
+    $("#purchase-Kids").text(kids);
+    $("#purchase-Time").text(showtimes);
+    $("#purchase-Price").text(parseInt(childPrices + adultPrices));
+
 
   });
+});
