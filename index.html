@@ -24,25 +24,26 @@
   </head>
   <body>
     <div class="container">
-  <h1>Movie Tickets</h1>
+      <h1>Movie Tickets</h1>
 
-<h2>What time would you like</h2>
-<form id="ticketSales">
-  <label><input type="radio" name="movieTime" value="12:00"> Noon</label><br>
-  <label><input type="radio" name="movieTime" value="3:00"> 3:00 discounted showing</label><br>
-  <label><input type="radio" name="movieTime" value="6:00"> 6pm</label><br>
-  <label><input type="radio" name="movieTime" value="9:00"> 9pm</label><br>
+    <h2>What time would you like</h2>
+    <form id="ticketSales">
+      <label><input type="radio" name="movieTime" value="12"> Noon</label><br>
+      <label><input type="radio" name="movieTime" value="3"> 3:00 discounted showing</label><br>
+      <label><input type="radio" name="movieTime" value="6"> 6pm</label><br>
+      <label><input type="radio" name="movieTime" value="9"> 9pm</label><br>
 
-<h2> How many adults? </h2>
-<label for="adults"> <input type="number" min="0" name="adults"> </label>
-<h2> How many children under 12 </h2>
-<label for="children"> <input type="number" min="0" name="children"> </label>
+    <h2> How many adults? </h2>
+    <label for="adults"> <input type="number" min="0" name="adults"> </label>
+    <h2> How many kids under 12 </h2>
+    <label for="kids"> <input type="number" min="0" name="kids"> </label>
 
-<h2> Cardholders name </h2>
-<label for="cardName"> <input type="text"  id="cardName"><br> </label>
-<button type="submit" id="submitButton">Place Order</button>
-</form>
-
-  </div>
-</body>
+    <h2> Cardholders name </h2>
+    <label for="cardName"> <input type="text"  id="cardName"><br> </label>
+    <button type="submit" id="submitButton">Place Order</button>
+    </form>
+        <div class="ticketOutput">
+        </div>
+      </div>
+    </body>
 </html>
