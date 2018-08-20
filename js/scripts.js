@@ -16,8 +16,14 @@ $(document).ready(function() {
   $("#ticketSales").submit(function(event) {
     event.preventDefault();
 
-    var showtimes =$("input[name =movieTime]:checked").val();
-console.log(showtimes + " this is showtime")
+    var showtimes = $("input[name=movieTime]:checked").val();
+    console.log(showtimes + " this is showtime")
+    var adults = $("input[name=adults]").val();
+    console.log(adults);
+    var children = $("input[name=children]").val();
+    console.log(children);
+    var cardHolder = $("#cardName").val();
+    console.log(cardHolder);
 
 
 
